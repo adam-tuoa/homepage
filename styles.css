@@ -61,7 +61,7 @@ body {
   z-index: 2;
   max-width: 1200px;
   width: 100%;
-  padding: 40px 40px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
