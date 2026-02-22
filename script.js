@@ -159,7 +159,7 @@ function drawImageConnections(
 ) {
   if (!hoverTransition) return;
 
-  const connectDistance = 500;
+  const connectDistance = 900;
   const imageRadius =
     Math.sqrt(imageWidth * imageWidth + imageHeight * imageHeight) / 2;
 
@@ -218,7 +218,7 @@ function drawTextConnections() {
   const textCenterX = textRect.left + textRect.width / 2;
   const textCenterY = textRect.top + textRect.height / 2;
 
-  const textConnectDistance = 300; // ADJUST: how far particles connect to text (try 200-400)
+  const textConnectDistance = 500; // ADJUST: how far particles connect to text (try 200-400)
 
   particles.forEach((particle) => {
     const dx = particle.x - textCenterX;
