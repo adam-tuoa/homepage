@@ -1,39 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adam Simmons | Data Analyst & Creative Problem Solver</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-name">Adam Simmons</h1>
-                <div class="hero-tagline">
-                    <p class="tagline-static">Data solutions</p>
-                    <p class="tagline-line">Creative problem solver</p>
-                    <p class="tagline-line">Curious</p>
-                    <p class="tagline-line">Cares</p>
-                    <p class="tagline-line">Making a difference</p>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="images/Adam Simmons - credit Sarah Walker.jpg" alt="Adam Simmons holding a colorful toy mobile" class="hero-image">
-            </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-name">Adam Simmons</h1>
+          <div class="hero-tagline">
+            <p class="tagline-static">Data solutions</p>
+            <p class="tagline-line">Creative problem solving</p>
+            <p class="tagline-line">Curious</p>
+            <p class="tagline-line">Caring</p>
+            <p class="tagline-line">Making a difference</p>
+          </div>
         </div>
-
-        <!-- Subtle animated background elements -->
-        <canvas id="background-canvas"></canvas>
-
-        <!-- Scroll hint -->
-        <div class="scroll-hint">
-            <div class="scroll-arrow"></div>
-            <div class="scroll-hint-coming">Coming soon</div>
+        <div class="hero-image-wrapper">
+          <img
+            src="images/Adam Simmons - credit Sarah Walker.jpg"
+            alt="Adam Simmons holding a colorful toy mobile"
+            class="hero-image"
+          />
         </div>
+      </div>
+
+      <!-- Subtle animated background elements -->
+      <canvas id="background-canvas"></canvas>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint">
+        <div class="scroll-arrow"></div>
+        <div class="scroll-hint-coming">Coming soon</div>
+      </div>
     </header>
 
+    <section class="projects">
+      <div class="projects-container">
+        <h2 class="projects-title">Projects</h2>
+
+        <div class="projects-grid">
+          <!-- Project Card Template - duplicate this block for new projects -->
+          <div class="project-card">
+            <div class="project-image-wrapper">
+              <img src="images/image.png" alt="Pokémon Explorer" class="project-image" />
+            </div>
+            <div class="project-content">
+              <h3 class="project-name">Pokémon Explorer</h3>
+              <p class="project-description">Interactive React app for exploring and filtering Pokémon by type and attributes. Built as part of the D3.js course.</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">D3.js</span>
+              </div>
+              <a href="https://adam-tuoa.github.io/first-react-app/" class="project-link">View Project →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
