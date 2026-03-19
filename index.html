@@ -32,13 +32,18 @@
       <canvas id="background-canvas"></canvas>
 
       <!-- Scroll hint -->
-      <div class="scroll-hint">
-        <div class="scroll-arrow"></div>
-        <div class="scroll-hint-coming">Coming soon</div>
+      <div class="scroll-hint" data-direction="down">
+        <div class="scroll-arrow scroll-arrow-down"></div>
+        <!-- <div class="scroll-hint-coming">Coming soon</div> -->
       </div>
     </header>
 
     <section class="projects">
+      <!-- Scroll hint (top) -->
+      <div class="scroll-hint scroll-hint-top" data-direction="up">
+        <div class="scroll-arrow scroll-arrow-up"></div>
+      </div>
+
       <div class="projects-container">
         <h2 class="projects-title">Projects</h2>
 
@@ -46,19 +51,57 @@
           <!-- Project Card Template - duplicate this block for new projects -->
           <div class="project-card">
             <div class="project-image-wrapper">
-              <img src="images/pokemon.png" alt="Pokémon Explorer" class="project-image" />
+              <img
+                src="images/pokemon.png"
+                alt="Pokémon Explorer"
+                class="project-image"
+              />
             </div>
             <div class="project-content">
               <h3 class="project-name">Pokémon Explorer</h3>
-              <p class="project-description">Interactive React app for exploring and filtering Pokémon by type and attributes. Built as part of the D3.js course.</p>
+              <p class="project-description">
+                Interactive React app for exploring and filtering Pokémon by
+                type and attributes. Built as part of the D3.js course.
+              </p>
               <div class="project-tags">
                 <span class="tag">React</span>
                 <span class="tag">D3.js</span>
               </div>
-              <a href="https://adam-tuoa.github.io/first-react-app/" class="project-link">View Project →</a>
+              <a
+                href="https://adam-tuoa.github.io/first-react-app/"
+                class="project-link"
+                >View Project →</a
+              >
             </div>
           </div>
 
+          <div class="project-card">
+            <div class="project-image-wrapper">
+              <img
+                src="images/d3-bar-chart.png"
+                alt="D3 Loves React - Global Student Distribution"
+                class="project-image"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-name">D3 ❤️ React Goes Global</h3>
+              <p class="project-description">
+                Interactive bar chart visualising the number of students by
+                country taking the D3.js course. Built with D3 for calculations
+                and React for rendering.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">Data Viz</span>
+              </div>
+              <a
+                href="https://adam-tuoa.github.io/d3-bar-chart/"
+                class="project-link"
+                >View Project →</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>

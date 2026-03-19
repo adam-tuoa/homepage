@@ -409,3 +409,57 @@ if (heroImage && heroImageWrapper) {
     }
   });
 }
+
+// Scroll hint click handler with custom slow scroll
+const scrollHints = document.querySelectorAll(".scroll-hint");
+let isScrolling = false;
+
+scrollHints.forEach((scrollHint) => {
+  scrollHint.style.cursor = "pointer";
+  scrollHint.addEventListener("click", (e) => {
+    if (isScrolling) return; // Prevent clicking during scroll
+    e.preventDefault();
+
+    const isUpArrow = e.target.classList.contains("scroll-arrow-up");
+    const direction = scrollHint.dataset.direction;
+
+    const targetY = direction === "up" || isUpArrow ? 0 : document.querySelector(".projects").offsetTop;
+    const startY = window.pageYOffset || document.documentElement.scrollTop;
+    const distance = targetY - startY;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    isScrolling = true;
+    scrollHints.forEach((hint) => {
+      hint.style.pointerEvents = "none";
+    });
+
+    function animateScroll(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const scrollPos = startY + distance * easeProgress;
+
+      window.scrollTo(0, scrollPos);
+      document.documentElement.scrollTop = scrollPos;
+      document.body.scrollTop = scrollPos;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        // Ensure we end at exact target
+        window.scrollTo(0, targetY);
+        document.documentElement.scrollTop = targetY;
+        document.body.scrollTop = targetY;
+
+        // Re-enable pointer events
+        isScrolling = false;
+        scrollHints.forEach((hint) => {
+          hint.style.pointerEvents = "auto";
+        });
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  });
+});
