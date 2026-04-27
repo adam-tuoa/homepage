@@ -423,7 +423,10 @@ scrollHints.forEach((scrollHint) => {
     const isUpArrow = e.target.classList.contains("scroll-arrow-up");
     const direction = scrollHint.dataset.direction;
 
-    const targetY = direction === "up" || isUpArrow ? 0 : document.querySelector(".projects").offsetTop;
+    const targetY =
+      direction === "up" || isUpArrow
+        ? 0
+        : document.querySelector(".projects").offsetTop;
     const startY = window.pageYOffset || document.documentElement.scrollTop;
     const distance = targetY - startY;
     const duration = 1200;
@@ -487,16 +490,13 @@ function closeEmbedModal() {
   document.body.classList.remove("embed-modal-open");
 }
 
-document.querySelectorAll(".project-image-wrapper[data-embed-url]").forEach(
-  (trigger) => {
+document
+  .querySelectorAll(".project-image-wrapper[data-embed-url]")
+  .forEach((trigger) => {
     trigger.addEventListener("click", () => {
-      openEmbedModal(
-        trigger.dataset.embedUrl,
-        trigger.dataset.embedTitle,
-      );
+      openEmbedModal(trigger.dataset.embedUrl, trigger.dataset.embedTitle);
     });
-  },
-);
+  });
 
 if (embedModal) {
   embedModal.querySelectorAll("[data-embed-close]").forEach((el) => {
