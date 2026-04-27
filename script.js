@@ -474,7 +474,8 @@ function openEmbedModal(url, title) {
   if (!embedModal) return;
   embedTitle.textContent = title || "Project preview";
   embedOpenLink.href = url;
-  embedFrame.src = url;
+  const separator = url.includes("?") ? "&" : "?";
+  embedFrame.src = `${url}${separator}embed=1`;
   embedModal.hidden = false;
   document.body.classList.add("embed-modal-open");
 }
