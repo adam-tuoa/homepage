@@ -50,13 +50,20 @@
         <div class="projects-grid">
           <!-- Project Card Template - duplicate this block for new projects -->
           <div class="project-card">
-            <div class="project-image-wrapper">
+            <button
+              class="project-image-wrapper"
+              type="button"
+              data-embed-url="https://adam-tuoa.github.io/first-react-app/"
+              data-embed-title="Pokémon Explorer"
+              aria-label="Open Pokémon Explorer in embedded view"
+            >
               <img
                 src="images/pokemon.png"
                 alt="Pokémon Explorer"
                 class="project-image"
               />
-            </div>
+              <span class="project-image-overlay">Open preview</span>
+            </button>
             <div class="project-content">
               <h3 class="project-name">Pokémon Explorer</h3>
               <p class="project-description">
@@ -76,13 +83,20 @@
           </div>
 
           <div class="project-card">
-            <div class="project-image-wrapper">
+            <button
+              class="project-image-wrapper"
+              type="button"
+              data-embed-url="https://adam-tuoa.github.io/d3-bar-chart/"
+              data-embed-title="D3 ❤️ React Goes Global"
+              aria-label="Open D3 React Goes Global in embedded view"
+            >
               <img
                 src="images/d3-bar-chart.png"
                 alt="D3 Loves React - Global Student Distribution"
                 class="project-image"
               />
-            </div>
+              <span class="project-image-overlay">Open preview</span>
+            </button>
             <div class="project-content">
               <h3 class="project-name">D3 ❤️ React Goes Global</h3>
               <p class="project-description">
@@ -102,9 +116,84 @@
               >
             </div>
           </div>
+
+          <div class="project-card">
+            <button
+              class="project-image-wrapper"
+              type="button"
+              data-embed-url="https://adam-tuoa.github.io/economist-bar-chart/"
+              data-embed-title="Economist-style Bar Chart"
+              aria-label="Open Economist-style Bar Chart in embedded view"
+            >
+              <img
+                src="images/economist.png"
+                alt="Economist-style Bar Chart"
+                class="project-image"
+              />
+              <span class="project-image-overlay">Open preview</span>
+            </button>
+            <div class="project-content">
+              <h3 class="project-name">Economist-style Bar Chart</h3>
+              <p class="project-description">
+                Economist-style bar chart exploring D3 scales, and jumping
+                ahead to add visualisation responsiveness across screen sizes
+                - try it yourself.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">Data Viz</span>
+              </div>
+              <a
+                href="https://adam-tuoa.github.io/economist-bar-chart/"
+                class="project-link"
+                >View Project →</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <div
+      class="embed-modal"
+      id="embed-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="embed-modal-title"
+      hidden
+    >
+      <div class="embed-modal-backdrop" data-embed-close></div>
+      <div class="embed-modal-content">
+        <div class="embed-modal-header">
+          <h3 class="embed-modal-title" id="embed-modal-title"></h3>
+          <div class="embed-modal-actions">
+            <a
+              class="embed-modal-open"
+              id="embed-modal-open"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              >Open full page ↗</a
+            >
+            <button
+              class="embed-modal-close"
+              type="button"
+              data-embed-close
+              aria-label="Close preview"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+        <iframe
+          class="embed-modal-frame"
+          id="embed-modal-frame"
+          title="Project preview"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

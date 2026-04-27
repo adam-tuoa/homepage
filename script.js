@@ -463,3 +463,46 @@ scrollHints.forEach((scrollHint) => {
     requestAnimationFrame(animateScroll);
   });
 });
+
+// Project embed modal
+const embedModal = document.getElementById("embed-modal");
+const embedFrame = document.getElementById("embed-modal-frame");
+const embedTitle = document.getElementById("embed-modal-title");
+const embedOpenLink = document.getElementById("embed-modal-open");
+
+function openEmbedModal(url, title) {
+  if (!embedModal) return;
+  embedTitle.textContent = title || "Project preview";
+  embedOpenLink.href = url;
+  embedFrame.src = url;
+  embedModal.hidden = false;
+  document.body.classList.add("embed-modal-open");
+}
+
+function closeEmbedModal() {
+  if (!embedModal || embedModal.hidden) return;
+  embedModal.hidden = true;
+  embedFrame.src = "about:blank";
+  document.body.classList.remove("embed-modal-open");
+}
+
+document.querySelectorAll(".project-image-wrapper[data-embed-url]").forEach(
+  (trigger) => {
+    trigger.addEventListener("click", () => {
+      openEmbedModal(
+        trigger.dataset.embedUrl,
+        trigger.dataset.embedTitle,
+      );
+    });
+  },
+);
+
+if (embedModal) {
+  embedModal.querySelectorAll("[data-embed-close]").forEach((el) => {
+    el.addEventListener("click", closeEmbedModal);
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeEmbedModal();
+});
